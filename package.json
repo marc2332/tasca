@@ -1,0 +1,18 @@
+{
+	"name": "tasca",
+	"version": "1.0.0",
+	"description": "A task runner.",
+	"main": "index.js",
+	"bin": {
+		"tasca": "index.js"
+	},
+	"scripts": {
+		"test": "node index.js ./test/test.js"
+	},
+	"dependencies": {
+		"chalk": "^4.1.0",
+		"ora": "^5.2.0"
+	},
+	"author": "Marc Espín Sanz <mespinsanz@gmail.com>",
+	"license": "MIT"
+}
