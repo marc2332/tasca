@@ -1,6 +1,6 @@
 {
 	"name": "tasca",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"description": "A task runner.",
 	"main": "src/index.js",
 	"bin": {

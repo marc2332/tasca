@@ -8,7 +8,7 @@ npm i tasca -D
 ```
 
 Usage:
-```
+```shell
 tasca ./tasca.js
 ```
 
