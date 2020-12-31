@@ -1,10 +1,10 @@
 {
 	"name": "tasca",
-	"version": "1.0.0",
+	"version": "1.0.4",
 	"description": "A task runner.",
-	"main": "index.js",
+	"main": "src/index.js",
 	"bin": {
-		"tasca": "index.js"
+		"tasca": "src/index.js"
 	},
 	"scripts": {
 		"test": "node index.js ./test/test.js"
