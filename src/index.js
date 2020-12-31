@@ -1,7 +1,9 @@
+#!/usr/bin/env node
+
 const chalk = require('chalk')
-const runFile = process.argv[1]
+const runFile = process.argv[2]
 const path = require('path')
-const defaultTasks = require(path.relative(process.cwd, runFile)).default
+const defaultTasks = require(path.join(process.cwd(), runFile)).default
 const ora = require('ora');
 const { performance } = require('perf_hooks')
 
