@@ -1,32 +1,23 @@
-
-function test(cb){
-	setTimeout(() => {
-		cb()
-	}, 2000)
-}
-
-function test2(cb){
-	//throw new Error("Oh no!")
+function Task1(cb){
 	cb()
 }
 
-function MoreTasks(cb){
+function Task2(cb){
+	cb()
+}
+
+function Task3(cb){
+	cb()
+}
+
+function MultipleTasks(){
 	return [
-		test,
-		test2
+		Task2,
+		Task3
 	]
 }
 
-
-function Subtree(){
-	return [
-		test2,
-		MoreTasks
-	]
-}
-
-module.exports.default = [
-	test,
-	Subtree,
-	Subtree
+exports.default = [
+	Task1,
+	MultipleTasks
 ]
