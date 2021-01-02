@@ -1,5 +1,6 @@
 const useWebpack = require('../../tasca-webpack/src/index.js')
 const useElectron = require('../../tasca-electron/src/index.js')
+const useServe = require('../../tasca-serve/src/index.js')
 const path = require('path')
 
 function Task1(cb){
@@ -47,6 +48,15 @@ exports.watch = [
 	MultipleTasks
 ]
 
+function serveFolder(){
+	this.use(useServe(path.join(__dirname, 'sample', 'index.html'),{
+		port: 9000
+	}))
+}
+
+exports.serve = [
+	serveFolder
+]
 
 
 

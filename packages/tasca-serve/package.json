@@ -1,0 +1,12 @@
+{
+	"name": "tasca-serve",
+	"version": "1.0.0",
+	"description": "Tasca plugin to easily serve files over a HTTP server.",
+	"main": "src/index.js",
+	"license": "MIT",
+	"dependencies": {
+		"chalk": "^4.1.0",
+		"express": "^4.17.1",
+		"serve-handler": "^6.1.3"
+	}
+}
