@@ -13,7 +13,6 @@ function useServe(public_path,{
 	return {
 		connect(task){
 			task.watch()
-			task.pass()
 			
 			app.use((req,res) => {
 				handler(req,res,{
@@ -23,6 +22,7 @@ function useServe(public_path,{
 			
 			app.listen(port, host, () => {
 				task.print(chalk.yellow(` ↳✨ Serving ${path.join(path.dirname(public_path),path.basename(public_path))} in port ${port}`))
+				task.pass()
 			})
 		}
 	}
