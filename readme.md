@@ -48,3 +48,8 @@ Installing dependencies:
 ```shell
 yarn
 ```
+
+Running tests:
+```shell
+yarn test --tasks default watch
+```
