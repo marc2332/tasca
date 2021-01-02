@@ -13,26 +13,26 @@ program.option('-t, --tasks <string...>', 'specify custom tasks')
 program.parse(process.argv);
 
 const runFile = process.argv[2]
-const Tasks = require(path.join(process.cwd(), runFile))
+const Tasks = require(path.join(process.cwd(), runFile));
 
-if(program.tasks == null || program.tasks?.length === 0){
-	runTasks(Tasks.default, '', 0).then(() => {
-		if(errors > 0){
-			console.log(chalk.red(`\n Finished with ${errors} ${errors === 1 ? 'error' : 'errors'}. \n`))
-		}else{
-			console.log(chalk.green(`\n Finished with 0 errors. \n`))
+(async () => {
+	if(program.tasks == null || program.tasks?.length === 0){
+		executeTask(Tasks.default)
+	}else{
+		for(let taskName of program.tasks){
+			await executeTasksGroup(taskName, Tasks[taskName])
 		}
-	})
-}else{
-	program.tasks?.forEach(( name ) => {
-		runTasks(Tasks[name], '', 0).then(() => {
-			if(errors > 0){
-				console.log(chalk.red(`\n Finished with ${errors} ${errors === 1 ? 'error' : 'errors'}. \n`))
-			}else{
-				console.log(chalk.green(`\n Finished with 0 errors. \n`))
-			}
-		})
-	})
+	}
+})()
+
+async function executeTasksGroup(tasksName, tasksGroup){
+	console.log(chalk.magenta(`\n [${tasksName}] \n`))
+	await runTasks(tasksGroup, '', 0)
+	if(errors > 0){
+		console.log(chalk.red(`\n Finished with ${errors} ${errors === 1 ? 'error' : 'errors'}. \n`))
+	}else{
+		console.log(chalk.green(`\n Finished with 0 errors. \n`))
+	}
 }
 
 let errors = 0
