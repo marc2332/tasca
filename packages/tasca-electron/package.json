@@ -1,0 +1,14 @@
+{
+	"name": "tasca-electron",
+	"version": "1.0.0",
+	"description": "Tasca plugin to easily run electron",
+	"main": "src/index.js",
+	"author": "Marc Espín Sanz <mespinsanz@gmail.com>",
+	"license": "MIT",
+	"peerDependencies": {
+		"electron": "^10.0.0"
+	},
+	"devDependencies": {
+		"electron": "^10.0.0"
+	}
+}

@@ -7,11 +7,6 @@ Install:
 npm i tasca -D
 ```
 
-Usage:
-```shell
-tasca ./tasca.js
-```
-
 Example tasks file:
 
 ```ts
@@ -38,4 +33,18 @@ exports.default = [
 	Task1,
 	MultipleTasks
 ]
+```
+
+Usage:
+```shell
+tasca ./tasca.js
+```
+
+## Contributing
+
+This is a monorepo, meaning that there are different packages in the same repository, all under `./packages`
+
+Installing dependencies:
+```shell
+yarn
 ```

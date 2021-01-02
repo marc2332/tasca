@@ -1,18 +1,11 @@
 {
-	"name": "tasca",
-	"version": "1.0.9",
-	"description": "A task runner.",
-	"main": "src/index.js",
-	"bin": {
-		"tasca": "src/index.js"
-	},
-	"scripts": {
-		"test": "node src/index.js ./test/test.js"
-	},
-	"dependencies": {
-		"chalk": "^4.1.0",
-		"ora": "^5.2.0"
-	},
-	"author": "Marc Espín Sanz <mespinsanz@gmail.com>",
-	"license": "MIT"
+	"private":true,
+	"workspaces": [
+		"packages/tasca",
+		"packages/tasca-webpack",
+		"packages/tasca-electron"
+	],
+	"scripts":{
+		"test": "node packages/tasca/src/index.js ./packages/tasca/test/test.js"
+	}
 }
