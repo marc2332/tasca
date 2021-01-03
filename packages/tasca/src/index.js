@@ -12,6 +12,7 @@ const program = new Command();
 function infoParser(arg,res){
 	const values = arg.split('=')
 	res[values[0]] = values[1]
+	return res
 }
 
 program
@@ -20,6 +21,7 @@ program
 
 program.parse(process.argv);
 global.info = program.info
+
 
 const runFile = process.argv[2]
 const Tasks = require(path.join(process.cwd(), runFile));
