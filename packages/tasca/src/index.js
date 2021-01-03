@@ -26,7 +26,7 @@ const Tasks = require(path.join(process.cwd(), runFile));
 
 (async () => {
 	if(program.tasks == null || program.tasks?.length === 0){
-		executeTasksGroup(Tasks.default)
+		executeTasksGroup('default',Tasks.default)
 	}else{
 		for(let taskName of program.tasks){
 			await executeTasksGroup(taskName, Tasks[taskName])
