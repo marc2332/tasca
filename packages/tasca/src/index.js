@@ -9,8 +9,12 @@ const { Command  } = require('commander');
 
 const program = new Command();
 
-program.option('-t, --tasks <string...>', 'specify custom tasks')
+program
+	.option('-t, --tasks <string...>', 'specify custom tasks')
+	.option('-i, --info <string...>', 'specify info', [])
+
 program.parse(process.argv);
+global.info = program.info
 
 const runFile = process.argv[2]
 const Tasks = require(path.join(process.cwd(), runFile));
