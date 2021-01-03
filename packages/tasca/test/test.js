@@ -1,6 +1,7 @@
 const useWebpack = require('../../tasca-webpack/src/index.js')
 const useElectron = require('../../tasca-electron/src/index.js')
 const useServe = require('../../tasca-serve/src/index.js')
+const useElectronBuilder = require('../../tasca-electron-builder/src/index.js')
 const path = require('path')
 
 function Task1(cb){
@@ -57,6 +58,18 @@ function serveFolder(){
 exports.serve = [
 	serveFolder
 ]
+
+function buildElectronBuilder(){
+	this.use(useElectronBuilder(
+		path.join(__dirname, '..', '..', 'tasca-electron-builder'),
+		path.join(__dirname, 'sample')
+	))
+}
+
+exports.build = [
+	buildElectronBuilder
+]
+
 
 console.log(info)
 

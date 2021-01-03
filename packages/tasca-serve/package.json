@@ -3,6 +3,7 @@
 	"version": "1.0.1",
 	"description": "Tasca plugin to easily serve files over a HTTP server.",
 	"main": "src/index.js",
+	"author": "Marc Espín Sanz <mespinsanz@gmail.com>",
 	"license": "MIT",
 	"dependencies": {
 		"chalk": "^4.1.0",

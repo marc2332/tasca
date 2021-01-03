@@ -1,0 +1,10 @@
+{
+	"name": "test",
+	"main": "dist_main/dist.sample.js",
+	"description": "Test app",
+	"version": "1.0.0",
+	"author": "Marc",
+	"devDependencies": {
+		"electron": "^11.1.1"
+	}
+}

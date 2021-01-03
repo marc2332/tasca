@@ -12,5 +12,6 @@
 		"ora": "^5.2.0"
 	},
 	"author": "Marc Espín Sanz <mespinsanz@gmail.com>",
-	"license": "MIT"
+	"license": "MIT",
+	"devDependencies": {}
 }

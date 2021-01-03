@@ -1,0 +1,15 @@
+{
+	"name": "tasca-electron-builder",
+	"version": "1.0.0",
+	"description":"Electron-builder plugin for tasca",
+	"main": "src/index.js",
+	"author": "Marc Espín Sanz <mespinsanz@gmail.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"electron": "^11.1.1",
+		"electron-builder": "^22.9.1"
+	},
+	"dependencies": {
+		"dargs": "^7.0.0"
+	}
+}

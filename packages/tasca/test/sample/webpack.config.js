@@ -17,7 +17,7 @@ module.exports = {
 	target: 'electron-main',
 	output: {
 		filename: 'dist.sample.js',
-		path: path.join(__dirname, 'dist'),
+		path: path.join(__dirname, 'dist_main'),
 		libraryTarget: 'umd',
 	},
 }

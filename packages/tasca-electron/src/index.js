@@ -1,6 +1,6 @@
-	const { spawn } = require('child_process')
-	const chalk = require('chalk')
-	const path = require('path')
+const { spawn } = require('child_process')
+const chalk = require('chalk')
+const path = require('path')
 
 function getElectronBin(projectDir){
 	if(process.platform === 'win32'){
@@ -32,7 +32,7 @@ function useElectron(projectDir, mainFile, extraArguments = []){
 			})
 
 			electronProcess.stdout.on('error', (error) => {
-				task.print(chalk.red(` →✨ [electron]:  ${data}`))
+				task.print(chalk.red(` →✨ [electron]:  ${error}`))
 			})
 
 			electronProcess.on('close', () => {
