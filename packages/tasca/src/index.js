@@ -9,9 +9,14 @@ const { Command  } = require('commander');
 
 const program = new Command();
 
+function infoParser(arg,res){
+	const values = arg.split('=')
+	res[values[0]] = values[1]
+}
+
 program
 	.option('-t, --tasks <string...>', 'specify custom tasks')
-	.option('-i, --info <string...>', 'specify info', [])
+	.option('-i, --info <string...>', 'specify info', infoParser, {})
 
 program.parse(process.argv);
 global.info = program.info

@@ -3,7 +3,8 @@
 	"workspaces": [
 		"packages/tasca",
 		"packages/tasca-webpack",
-		"packages/tasca-electron"
+		"packages/tasca-electron",
+		"packages/tasca-serve"
 	],
 	"scripts":{
 		"test": "node packages/tasca/src/index.js ./packages/tasca/test/test.js"

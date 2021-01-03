@@ -58,6 +58,8 @@ exports.serve = [
 	serveFolder
 ]
 
+console.log(info)
+
 
 
 
