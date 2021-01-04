@@ -115,6 +115,9 @@ async function runTasks(tasks, prefix, level){
 					arguments.forEach(arg => {
 						console.log(`${get_prefix(false)}${arg}`)
 					})
+				},
+				error(errorMessage){
+					respond(false, errorMessage)
 				}
 			}
 			

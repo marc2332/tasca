@@ -29,7 +29,8 @@ function useWebpack(config_file, options = {}){
 				instance.run((err, stats) => {
 					const info = stats.toJson()
 					if(info.errors.length > 0){
-						throw info.errors
+						task.print(`\n\n ${info.errors.map(err => err.message)[0]} <--`)
+						task.error(`↳❌ [webpack] Couldn't compile for '${config.name}'.`)
 					} else{
 						task.next()
 					}

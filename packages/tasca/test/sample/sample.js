@@ -15,3 +15,6 @@ app.whenReady().then(() => {
 		console.log(' Hello World from the main process')
 	},1000)
 })
+asjkdask;;/(/"·!=$)("·")")___ok hooclasdkjsa
+
+3243ÇÇÇ]*

@@ -28,6 +28,16 @@ exports.default = [
 	MultipleTasks
 ]
 
+function BuildWebpack(cb){
+	this.use(useWebpack(path.join(__dirname,'./sample/webpack.config.js'), {
+		watch: false
+	}))
+}
+
+exports.buildWebpack = [
+	BuildWebpack
+]
+
 function WatchWebpack(cb){
 	this.use(useWebpack(path.join(__dirname,'./sample/webpack.config.js'), {
 		watch: true
