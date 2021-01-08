@@ -9,6 +9,7 @@ function Task1(cb){
 }
 
 function Task2(cb){
+		throw "hola"
 	cb()
 }
 
@@ -79,14 +80,4 @@ function buildElectronBuilder(){
 exports.build = [
 	buildElectronBuilder
 ]
-
-
-console.log(info)
-
-
-
-
-
-
-
 

@@ -16,12 +16,12 @@ function infoParser(arg,res){
 }
 
 program
-	.option('-t, --tasks <string...>', 'specify custom tasks')
-	.option('-i, --info <string...>', 'specify info', infoParser, {})
+	.option('-t, --tasks <string...>', 'Specify custom tasks')
+	.option('-i, --info <string...>', 'Specify info', infoParser, {})
+	.option('-s, --strict', 'Specify if it should be strict or not', false)
 
 program.parse(process.argv);
 global.info = program.info
-
 
 const runFile = process.argv[2]
 const Tasks = require(path.join(process.cwd(), runFile));
@@ -73,7 +73,13 @@ async function runTasks(tasks, prefix, level){
 				} else if (res === false){
 					spinner.stopAndPersist()
 					console.log(chalk.red(`${get_prefix(false)} ↳❌ Error in ${task.name} (${get_time(endingPoint)})`))
-					if(err) console.log(chalk.red(`${get_prefix()}📝 ${err}`))
+					if(err) {
+						console.log(chalk.red(`${get_prefix()} ↳❌ ${err}`))
+						if(program.strict){
+							console.log(chalk.red(`\n Excited.`))
+							process.exit(0)
+						}
+					}
 					errors++
 					resolve()
 				} else if (Array.isArray(res)){
