@@ -76,8 +76,8 @@ async function runTasks(tasks, prefix, level){
 					if(err) {
 						console.log(chalk.red(`${get_prefix()} ↳❌ ${err}`))
 						if(program.strict){
-							console.log(chalk.red(`\n Excited.`))
-							process.exit(0)
+							console.log(chalk.red(`\n Exited.`))
+							process.exit(1)
 						}
 					}
 					errors++
