@@ -31,6 +31,10 @@ const Tasks = require(path.join(process.cwd(), runFile));
 		executeTasksGroup('default',Tasks.default)
 	}else{
 		for(let taskName of program.tasks){
+			if(Tasks[taskName] == null){
+				console.log(chalk.red(`Error, any task by name <${taskName}> was found`))
+				process.exit(1)
+			}
 			await executeTasksGroup(taskName, Tasks[taskName])
 		}
 	}
