@@ -9,7 +9,7 @@ function Task1(cb){
 }
 
 function Task2(cb){
-		throw "hola"
+	throw "fake error"
 	cb()
 }
 

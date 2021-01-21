@@ -16,5 +16,3 @@ app.whenReady().then(() => {
 	},1000)
 })
 
-// This will make it fail
-______++¿

@@ -14,8 +14,9 @@ function useWebpack(config_file, options = {}){
 				instance.watch({},(err, stats) => {
 					const info = stats.toJson()
 					if(stats.hasErrors() && info.errors.length > 0){
+						task.print(chalk.magenta(` ↳❌ [webpack] Errors were found while compiling.`))
 						info.errors.map(err => {
-							task.print(chalk.red(` ↳❌ [webpack] Error in: ${err.moduleName}\n\n`)+` ${err.message}`)
+							task.print(chalk.red(` ↳❌ [webpack] Error in: ${err.moduleName}\n\n`)+`${err.message}`)
 						})
 						anyError = true
 					}else {
@@ -31,7 +32,7 @@ function useWebpack(config_file, options = {}){
 				instance.run((err, stats) => {
 					const info = stats.toJson()
 					if(info.errors.length > 0){
-						task.print(`\n\n ${info.errors.map(err => err.message)[0]} <--`)
+						task.print(`\n\n ${info.errors.map(err => err.message)[0]}`)
 						task.error(`↳❌ [webpack] Couldn't compile for '${config.name}'.`)
 					} else{
 						task.next()
