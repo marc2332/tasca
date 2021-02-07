@@ -1,10 +1,14 @@
-# Tasca
+# 📑 Tasca
 
-Tasca is a task runner, useful to automate the process of compiling your app.
+Tasca is a easy-to-use task runner, useful to automate the process of compiling your app.
 
-Install:
+Install with npm:
 ```shell
 npm i tasca -D
+```
+Or with yarn:
+```shell
+yarn add tasca -D
 ```
 
 Example tasks file:
@@ -23,6 +27,7 @@ function Task3(cb){
 }
 
 function MultipleTasks(){
+	// This is a tree of tasks (it allows you to group different tasks)
 	return [
 		Task2,
 		Task3
@@ -35,12 +40,24 @@ exports.default = [
 ]
 ```
 
-Usage:
+### Usage
+
+Default task:
 ```shell
-tasca ./tasca.js
+tasca ./tasks.js
 ```
 
-## Contributing
+Custom tasks:
+```shell
+tasca ./tasks.js --tasks my_task another_task
+```
+
+Passing info to the task file as global variables:
+```shell
+tasca ./tasks.js --info something=Whatever
+```
+
+## 🤓 Contributing
 
 This is a monorepo, meaning that there are different packages in the same repository, all under `./packages`
 
